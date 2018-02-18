@@ -1,0 +1,12 @@
+PaperlessOffice/GUI/Tab/View/Folder.pm~:    (PaperlessOffice::GUI::Tab::View::Menus->new
+PaperlessOffice/GUI/Tab/View/Folder.pm~:  $self->MyMenus->LoadMenus;
+PaperlessOffice/GUI/Tab/View/Folder.pm~:  foreach my $menutype (keys %{$self->MyMenus->MyMenu}) {
+PaperlessOffice/GUI/Tab/View/Folder.pm~:    $self->MyMenus->MyMenu->{$menutype}->unpost();
+PaperlessOffice/GUI/Tab/View/Folder.pm~:  $self->MyMenus->MyMenu->{$args{Type}}->post($Ev->X, $Ev->Y);
+PaperlessOffice/GUI/Tab/View/Menus.pm:     Spec => $self->Menus->{Document},
+PaperlessOffice/GUI/Tab/View/Menus.pm:     Spec => $self->Menus->{Blank},
+PaperlessOffice/GUI/Tab/View/Folder.pm:    (PaperlessOffice::GUI::Tab::View::Menus->new
+PaperlessOffice/GUI/Tab/View/Folder.pm:  $self->MyMenus->LoadMenus;
+PaperlessOffice/GUI/Tab/View/Folder.pm:  foreach my $menutype (keys %{$self->MyMenus->MyMenu}) {
+PaperlessOffice/GUI/Tab/View/Folder.pm:    $self->MyMenus->MyMenu->{$menutype}->unpost();
+PaperlessOffice/GUI/Tab/View/Folder.pm:  $self->MyMenus->MyMenu->{$args{Type}}->post($Ev->X, $Ev->Y);

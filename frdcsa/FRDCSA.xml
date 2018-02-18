@@ -1,0 +1,141 @@
+<system>
+  <title>
+    Paperless Office
+    <!-- What it is called. Short. Easy to remember. Relevant. -->
+  </title>
+  <acronym-expansion>
+    <!-- If it is an acronym, what does it expand to? -->
+  </acronym-expansion>
+  <slogan>
+    <!-- What if any is the slogan? -->
+  </slogan>
+  <pi>
+    <!-- Who is Principle Investigator? -->
+  </pi>
+  <short-description>
+    Nuance Paperport (TM) equivalent
+    <!-- "This system is a system that ..."
+
+Syntactic  controls: The $title  system is  a (system  for)? "..."
+Tag line, under 70 characters, do not puncuate end.
+
+Semantic controls:  Purpose of  short-description is to  provide a
+one  line  summary that  gives  some  indication  of the  system's
+capabilities  for  things  like  apt.   It is  equivalent  to  the
+short-desc from the Debian control file.
+
+QUOTED FROM DEBIAN POLICY
+
+3.4.1 The single line synopsis
+
+The single line synopsis should be kept brief - certainly under 80
+characters.
+
+Do not include the package  name in the synopsis line. The display
+software knows how to display this already, and you do not need to
+state it. Remember  that in many situations the  user may only see
+the synopsis line - make it  as informative as you can.
+
+(Answers question .)
+    -->
+  </short-description>
+  <medium-description>
+    Scan, OCR, text classify, and file (into filing cabinets)
+    documents.  It uses Ocropus and Tesseract to OCR images obtained
+    by the scanner.  The text is then classified and various other
+    meta-data is derived.  A location within your filing cabinets is
+    prescribed.  When you require documents, you have full text search
+    along with other search capabilities (similar to many aspects of
+    Digilib).
+    <!-- Similar to extended description for Debian.
+	 
+	 QUOTED FROM DEBIAN POLICY
+
+3.4.2 The extended description
+
+Do not try to continue  the single line synopsis into the extended
+description.  This   will  not   work  correctly  when   the  full
+description  is  displayed, and  makes  no  sense  where only  the
+summary (the single line synopsis) is available.
+
+The extended description should describe what the package does and
+how  it relates  to  the rest  of  the system  (in  terms of,  for
+example, which subsystem it is which part of).
+
+The description field  needs to make sense to  anyone, even people
+who  have  no idea  about  any of  the  things  the package  deals
+with.[6]
+    -->
+    <summary>
+      <!-- What does the system do? -->
+    </summary>
+    <relationship>
+      <!-- What is the relation to the rest of the FRDCSA? -->
+    </relationship>
+    <lay-description>
+      <!-- Give a non-technical description of what the system does. -->
+    </lay-description>
+  </medium-description>
+  <long-description>
+    <p>
+      I have been writing a system that partially satisfies the notion
+      of "Open Source Paperport Equivalent". But it does a lot of
+      things that I don't think Paperport does. For instance, it has
+      automatic document classification, syncs with your filing
+      cabinet, has date extraction and fills a calendar with date
+      mentions for easy checking of due dates, has semantic web
+      integration and can do a lot of sophisticated natural language
+      processing, such as extracting todo lists from documents, spam
+      detection, urgency classification, along with planning,
+      scheduling and execution features. (You can set due dates, and
+      document and task interdependencies, i.e. this document has to
+      be sent to so and so and a reply received before we can fill out
+      this document). So it has workflow support.
+    </p>
+    <p>
+      There are many more options and plans for this system than are
+      easy to reveal at this moment.  Much of the way it handles
+      documents will be similar eventually to KBFS.  It can be used to
+      maintain the reading lists for CLEAR and Study.  It will
+      integrate with SPSE2 and PICVis when they are complete enough to
+      represent various domains.  It may even merge somewhat with
+      them.
+    </p>
+    <intro>
+      <!-- Long  description goes on  the codebase  website as  the Project
+	   Description.  One  or more  paragraphs that gives  very detailed
+	   information about the project or codebase.
+      -->
+    </intro>
+    <provides>
+      <!-- What does package do technically? -->
+      <capability>Document Management</capability>
+      <capability></capability>
+    </provides>
+    <relationships>
+      <!-- What is the technical relation to FRDCSA subsystems? -->
+      <subsystems>
+      </subsystems>
+      <supersystems>
+      </supersystems>
+      <package-dependencies>
+	<!-- What Debian packages does this depend on? -->
+      </package-dependencies>
+      <other-dependencies>
+	<!-- What codebases does this depend on? -->
+      </other-dependencies>
+    </relationships>
+    <technical-description>
+      <!-- Give a detailed technical description. -->
+    </technical-description>
+    <relevant-information>
+      <!-- Give any other relevant information. -->
+    </relevant-information>
+    <conclusion>
+    </conclusion>
+    <links>
+      <link>
+      </link>
+    </links>
+  </long-description>
+</system>

@@ -1,0 +1,67 @@
+sub AddDocumentOrig {
+  my ($self,%args) = @_;
+  # print Dumper($args{DocumentID});
+  my $document = $UNIVERSAL::paperlessoffice->MyDocumentManager->Documents->{$args{DocumentID}};
+  # print Dumper($document);
+  my $imagename = "thumbnail-".$self->Name."-".$document->DocumentID;
+  my $thumbnail = $document->GetThumbnail;
+  my ($x1,$y1) = $self->GetPositionForImage
+    (Number => $args{Number});
+  # if (! $args{Redraw}) {
+  $self->Photos->{$imagename} = $self->MyCanvas->Photo
+    (
+     $imagename,
+     -file => $thumbnail->File,
+    );
+  # }
+  my $id = $self->MyCanvas->createImage
+    (
+     $x1 + $thumbnail->Width / 2, $y1 + $thumbnail->Height / 2,
+     -image => $imagename,
+     -tags => [$document->DocumentID],
+    );
+
+  if ($document->Selected) {
+    $self->MyCanvas->createRectangle
+      (
+       $x1,$y1,$x1+$thumbnail->Width,$y1+$thumbnail->Height,
+       -fill => 'black',
+       -stipple => 'gray50',
+       -tags => [$document->DocumentID],
+      );
+  }
+
+  # if document has a title, display it at the bottom
+  if (defined $document->Title and $document->Title =~ /./) {
+    $self->MyCanvas->createText
+      (
+       $x1+($thumbnail->Width/2),$y1+$thumbnail->Height + 5,
+       -anchor => 'n',
+       -text => $document->Title,
+       -width => $thumbnail->Width,
+       -tags => ["text"],
+      );
+  }
+
+  # # add tags here
+  # $self->MyCanvas->addtag($args{Number}, "withtag", $id);
+  # $self->MyCanvas->addtag($id, "withtag", $id);
+
+  # print Dumper({No => $args{Number}});
+
+  # draw a border
+  $self->MyCanvas->createLine
+    (
+     $x1+$thumbnail->Width,$y1,
+     $x1,$y1,
+     $x1,$y1+$thumbnail->Height,
+     -width => 1,
+    );
+  $self->MyCanvas->createLine
+    (
+     $x1,$y1+$thumbnail->Height,
+     $x1+$thumbnail->Width,$y1+$thumbnail->Height,
+     $x1+$thumbnail->Width,$y1,
+     -width => 2,
+    );
+}

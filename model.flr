@@ -1,0 +1,32 @@
+% look into using situation calculus from mindigolog or something,
+% read up on that.
+
+sign(document,cursiveSignature):action.
+sign(document,privateKey):action.
+
+isEmpty(inbox).
+
+% use logic to plan intentions and work out document issues
+
+% use logic to model the boxes in the closet, other boxes, sources of
+% paper
+
+% model all paper sources (mail, junkmail, handwrittenNotes, printer, etc)
+
+% model all digital paper outputs (email, social media, etc)
+
+% hasPaidAttentionToSourcesOfIncomingPaper(?Person).
+
+% isUsingPaperlessBilling(?Person).
+% isUsingService(?Person,?Service), offersPaperlessBilling(?Service).
+% hasEmailUnderControl(?Person).
+% hasRedundantAccessToPaperlessBilling(?Person1,?Person2).
+% hasSeparateEmailAccountForBills(?Person,?EmailAccount).
+% isWillingToCheckBalancesRegularly(?Person,?BankAccount).
+
+% hasSecondaryBankAccountForOnlineBilling(?Person,?BankAccount).
+% hasAlertsInCalendarReminding AboutUpcomingPayments(?Person,?Calendar).
+% knows(?Person)(isEnoughMoneyToPayDueBills(?BankAccount,?Bills)).
+% hasDownloadedStatement(?Person,?Service,?Period).
+
+% receivesBankStatementOnlineMonthly(?Person,?Bank).

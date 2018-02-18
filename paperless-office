@@ -1,0 +1,22 @@
+#!/usr/bin/perl -w
+
+use Carp 'verbose';
+$SIG{ __DIE__ } = sub { Carp::confess( @_ ) };
+
+use PaperlessOffice;
+
+# use UniLang::Agent::Agent;
+# use UniLang::Util::Message;
+
+# $UNIVERSAL::agent = UniLang::Agent::Agent->new
+#   (Name => "APP",
+#    ReceiveHandler => \&Receive);
+$UNIVERSAL::paperlessoffice = PaperlessOffice->new();
+
+# sub Receive {
+#   my %args = @_;
+#   $UNIVERSAL::app->ProcessMessage
+#     (Message => $args{Message});
+# }
+
+$UNIVERSAL::paperlessoffice->Execute();

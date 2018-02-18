@@ -1,0 +1,42 @@
+cp /var/lib/myfrdcsa/codebases/minor/paperless-office/data/cabinets/paperport/documents/uvXBS7oiTS/thumbnail.gif /var/lib/myfrdcsa/codebases/minor/paperless-office/data/cabinets/paperport/documents/tcXUs9mpJa
+cp /var/lib/myfrdcsa/codebases/minor/paperless-office/data/cabinets/paperport/documents/uvXBS7oiTS/0.pnm /var/lib/myfrdcsa/codebases/minor/paperless-office/data/cabinets/paperport/documents/tcXUs9mpJa/0.pnm
+cp /var/lib/myfrdcsa/codebases/minor/paperless-office/data/cabinets/paperport/documents/1VJV3ITgof/0.pnm /var/lib/myfrdcsa/codebases/minor/paperless-office/data/cabinets/paperport/documents/tcXUs9mpJa/1.pnm
+cp /var/lib/myfrdcsa/codebases/minor/paperless-office/data/cabinets/paperport/documents/JPYs3hCvzp/0.pnm /var/lib/myfrdcsa/codebases/minor/paperless-office/data/cabinets/paperport/documents/tcXUs9mpJa/2.pnm
+cp /var/lib/myfrdcsa/codebases/minor/paperless-office/data/cabinets/paperport/documents/u5hOw89TnK/0.pnm /var/lib/myfrdcsa/codebases/minor/paperless-office/data/cabinets/paperport/documents/tcXUs9mpJa/3.pnm
+cp /var/lib/myfrdcsa/codebases/minor/paperless-office/data/cabinets/paperport/documents/G2vU_C3KpG/0.pnm /var/lib/myfrdcsa/codebases/minor/paperless-office/data/cabinets/paperport/documents/tcXUs9mpJa/4.pnm
+cp /var/lib/myfrdcsa/codebases/minor/paperless-office/data/cabinets/paperport/documents/mwTUJwKaEf/0.pnm /var/lib/myfrdcsa/codebases/minor/paperless-office/data/cabinets/paperport/documents/tcXUs9mpJa/5.pnm
+cp /var/lib/myfrdcsa/codebases/minor/paperless-office/data/cabinets/paperport/documents/VOZqAlBpkB/0.pnm /var/lib/myfrdcsa/codebases/minor/paperless-office/data/cabinets/paperport/documents/tcXUs9mpJa/6.pnm
+cp /var/lib/myfrdcsa/codebases/minor/paperless-office/data/cabinets/paperport/documents/oKzk7CXbdt/0.pnm /var/lib/myfrdcsa/codebases/minor/paperless-office/data/cabinets/paperport/documents/tcXUs9mpJa/7.pnm
+cp /var/lib/myfrdcsa/codebases/minor/paperless-office/data/cabinets/paperport/documents/GxqQmhaJO3/0.pnm /var/lib/myfrdcsa/codebases/minor/paperless-office/data/cabinets/paperport/documents/tcXUs9mpJa/8.pnm
+cp /var/lib/myfrdcsa/codebases/minor/paperless-office/data/cabinets/paperport/documents/AbGPlmxkjR/0.pnm /var/lib/myfrdcsa/codebases/minor/paperless-office/data/cabinets/paperport/documents/tcXUs9mpJa/9.pnm
+$VAR1 = {
+          'Flags' => {
+                       'AssertWithoutCheckingConsistency' => 1
+                     },
+          'InputType' => 'Interlingua',
+          'Context' => 'Org::FRDCSA::PaperlessOffice::Cabinet::paperport',
+          'QueryAgent' => 1,
+          'Unassert' => [
+                          [
+                            'has-thumbnail',
+                            [
+                              'document-fn',
+                              'paperport',
+                              'uvXBS7oiTS'
+                            ],
+                            'thumbnail.gif'
+                          ],
+                          [
+                            'has-type',
+                            $VAR1->{'Unassert'}[0][1],
+                            'MultipleImages'
+                          ],
+                          [
+                            'has-folder',
+                            $VAR1->{'Unassert'}[0][1],
+                            {
+                              'Incoming from Scanner' => 1
+                            }
+                          ]
+                        ]
+        };

@@ -1,0 +1,562 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<title>WatchOCR - A Linux Bootable OCR System - The Digital Rag</title>
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+<link rel="SHORTCUT ICON" href="http://digital-rag.com/layout/nouveau/images/favicon.ico" />
+<link rel="stylesheet" type="text/css" href="http://digital-rag.com/css.php?t=nouveau&amp;i=css_f4c940f638d0eeae5bae384215c373d9" title="nouveau" />
+<link rel="alternate" type="application/rss+xml" hreflang="en-gb" href="http://digital-rag.com/backend/digital-rag.rdf" title="RSS Feed: The Digital Rag" />
+<link rel="alternate" type="application/rss+xml" hreflang="en-gb" href="http://digital-rag.com/backend/geeklog.rss" title="RSS Feed: The Digital Rag" />
+<link rel="alternate" type="application/rss+xml" hreflang="en-gb" href="http://digital-rag.com/backend/Digital-Rag-All.rss" title="RSS Feed: The Digital Rag" /><link rel="home" href="http://digital-rag.com/" title="Home" />
+<link rel="search" href="http://digital-rag.com/search.php" title="Advanced Search" />
+<link rel="contents" href="http://digital-rag.com/directory.php" title="Directory" />
+<link rel="service" type="application/atomsvc+xml" href="http://digital-rag.com/webservices/atom/index.php?introspection" title="Webservices" />
+<script type="text/javascript" src="http://digital-rag.com/js.php?t=nouveau&amp;i=css_f4c940f638d0eeae5bae384215c373d9"></script>
+<link rel="canonical" href="http://digital-rag.com/article.php/WatchOCR-Linux-OCR" />
+<!--
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/"
+         xmlns:dc="http://purl.org/dc/elements/1.1/">
+<rdf:Description
+    rdf:about="http://digital-rag.com/article.php/WatchOCR-Linux-OCR"
+    trackback:ping="http://digital-rag.com/trackback.php/WatchOCR-Linux-OCR"
+    dc:title="WatchOCR - A Linux Bootable OCR System"
+    dc:identifier="http://digital-rag.com/article.php/WatchOCR-Linux-OCR" />
+</rdf:RDF>
+-->
+
+<!-- Bad Behavior 2.0.43 run time: 5.798 ms -->
+<script type="text/javascript">
+<!--
+function bb2_addLoadEvent(func) {
+	var oldonload = window.onload;
+	if (typeof window.onload != 'function') {
+		window.onload = func;
+	} else {
+		window.onload = function() {
+			oldonload();
+			func();
+		}
+	}
+}
+
+bb2_addLoadEvent(function() {
+	for ( i=0; i < document.forms.length; i++ ) {
+		if (document.forms[i].method == 'post') {
+			var myElement = document.createElement('input');
+			myElement.setAttribute('type', 'hidden');
+			myElement.name = 'bb2_screener_';
+			myElement.value = '1396050896 173.165.36.107';
+			document.forms[i].appendChild(myElement);
+		}
+	}
+});
+// --></script>
+		
+<meta name="keywords" content="OCR, HTML, Cuneiform, WatchOCR, PDF, scan, TIFF, BMP, bitmap, rich Text, TeX, conversion, optical character recognition, linux, debian, fedora, knoppix, microknoppix, bootable CD" />
+<meta name="description" content="How to use the WatchOCR bootable Linux disk to OCR and create HTML pages from PDF files" />
+<script src="http://digital-rag.com/quicklinks/js/quicklinks.js" type="text/javascript" charset="utf-8"></script><script type='text/javascript'>
+				// <!-- 
+					function updateLinks(ql_getpage) {
+
+						var lbcategory = $('ql_category').options[$('ql_category').selectedIndex].value;
+						var ql_target = $('ql_target').checked;
+						var ql_getpage = ql_getpage;
+
+
+					    new Ajax('http://digital-rag.com/quicklinks/index.php?ql_category='+lbcategory+'&ql_target='+ql_target+'&ql_getpage='+ql_getpage,
+					        {
+					            method: 'get',
+					            data: '',
+					            update: $('quicklinks_box')
+					        }).request();
+					}; 
+				// -->
+			</script><script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js"></script>
+<script type="text/javascript">var addthis_config = {
+          services_exclude: '100zakladok,a1webmarks,amazonwishlist,amenme,arto,ask,aviary,baidu,ballhype,bebo,bitly,bizsugar,bleetbox,blinklist,blip,bloggy,bobrdobr,bonzobox,bordom,brainify,bryderi,buddymarks,care2,colivia,connotea,diggita,diglog,diigo,domelhor,dosti,dotnetkicks,dotnetshoutout,dzone,edelight,ekudos,email,embarkons,eucliquei,evernote,fabulously40,favoritus,flosspro,fnews,fresqui,friendfeed,funp,fwisp,gacetilla,gamesnetworks,globalgrind,gluvsnap,gravee,grumper,habergentr,hackernews,hadashhot,hatena,hazarkor,hellotxt,hemidemi,hipstr,hitmarks,w3validator,hyves,identica,investorlinks,jumptags,kaevur,kledy,koornk,kudos,laaikit,librerio,linkninja,linkagogo,linkuj,live,livejournal,lunch,lynki,meccho,meinvz,memori,meneame,mindbodygreen,misterwong,misterwong_de,mixx,myaol,mylinkvault,n4g,netlog,netvouz,osmosus,oyyla,phonefavs,planypus,polladium,posterous,propeller,pusha,quantcast,scoopat,segnalo,shaveh,simpy,smaknews,sodahead,sonico,speedtile,sphinn,springpad,squidoo,startaid,startlap,strands,studivz,stuffpit,stumpedia,stylehive,svejo,symbaloo,tagza,technet,tellmypolitician,thisnext,tipd,transferr,tulinq,tumblr,tusul,tweetmeme,typepad,viadeo,vyoom,webnews,domaintoolswhois,windycitizen,wordpress,worio,wovre,wykop,xanga,yahoomail,buzz_fr,yammer,yardbarker,yigg,yoolink,yorumcuyum,youmob',
+          services_compact: 'blogger,delicious,digg,facebook,faves,myspace,printfriendly,readitlater,stumbleupon,technorati,twitter,more',
+          ui_cobrand: 'glFusion CMS',
+          ui_click: 0,
+          ui_language: 'en'
+    }
+</script>
+<!--[if lte IE 6]>
+<link rel="stylesheet" type="text/css" href="http://digital-rag.com/layout/nouveau/ie6.css" title="nouveau" />
+<script defer type="text/javascript" src="http://digital-rag.com/javascript/mootools/gl_mooie6warning.js"></script>
+<script defer type="text/javascript" src="http://digital-rag.com/javascript/mootools/gl_moopngfix.js"></script>
+<script defer type="text/javascript" src="http://digital-rag.com/javascript/sitetailor_ie6vertmenu.js"></script>
+<![endif]-->
+<!--[if IE 7]>
+<link rel="stylesheet" type="text/css" href="http://digital-rag.com/layout/nouveau/ie7.css" title="nouveau" />
+<![endif]-->
+<!--[if IE 8]>
+<link rel="stylesheet" type="text/css" href="http://digital-rag.com/layout/nouveau/ie7.css" title="nouveau" />
+<script defer type="text/javascript" src="http://digital-rag.com/javascript/sitetailor_ie6vertmenu.js"></script>
+<![endif]-->
+<!-- Google Webfonts -->
+<script type="text/javascript">
+      WebFontConfig = {
+   google: { families: [ 'Vollkorn', 'Droid Serif', 'OFL Sorts Mill Goudy TT' ] }
+      };
+      (function() {
+        var wf = document.createElement('script');
+        wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
+            '://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
+        wf.type = 'text/javascript';
+        wf.async = 'true';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(wf, s);
+      })();
+    </script>
+
+</head>
+<body dir="ltr" style="background:#fff;">
+<div>
+  <a name="top"></a>
+  <a href="#content-start">   <img class="hidden" src="http://digital-rag.com/layout/nouveau/images/speck.gif" alt="skip navigation" />
+  </a>
+</div>
+    <div id="gl_container_fluid">         <div id="gl_header">
+            <div class="top-r-corner">
+                <div class="top-l-corner">
+					                    <div id="header-site-name">
+                        <a href="http://digital-rag.com" rel="bookmark" title="Real World Information in a Virtual World">
+                            The Digital Rag                        </a>
+                        <div id="header-site-slogan">Real World Information in a Virtual World</div>
+                    </div>
+                </div>
+            </div>
+        </div> 		                  <div id="gl_moomenu1">
+<div class="gl_moomenu1">
+<ul class="gl_moomenu1">
+<li><a href="http://digital-rag.com/">Home</a></li>
+<li><a href="http://digital-rag.com/search.php">Search</a></li>
+<li><a href="http://digital-rag.com/directory.php">Directory</a></li>
+<li><a class="parent1" name="parent1" href="#">Topics</a>
+<ul>
+<li><a href="http://digital-rag.com/index.php?topic=Cancer">Cancer</a></li>
+<li><a href="http://digital-rag.com/index.php?topic=Environment">The Environment</a></li>
+<li><a href="http://digital-rag.com/index.php?topic=DrivingGame">The Driving Game</a></li>
+<li><a href="http://digital-rag.com/index.php?topic=Musings">Musings on life</a></li>
+<li><a href="http://digital-rag.com/index.php?topic=user-admin">Member Administration</a></li>
+<li><a href="http://digital-rag.com/index.php?topic=archive">Archive</a></li>
+<li><a href="http://digital-rag.com/index.php?topic=vidnet">Video On the Internet</a></li>
+<li><a href="http://digital-rag.com/index.php?topic=sysadmin-pub">System Administration Tidbits</a></li>
+<li><a href="http://digital-rag.com/index.php?topic=digitalcameras">Digital Cameras in Use</a></li>
+<li><a href="http://digital-rag.com/index.php?topic=pacdat-news">Newsletter Postings</a></li>
+<li><a href="http://digital-rag.com/index.php?topic=General">General News</a></li>
+<li><a href="http://digital-rag.com/index.php?topic=motorcycle">Motorcycling</a></li>
+<li><a href="http://digital-rag.com/index.php?topic=ContentManagement">Content Managed Systems</a></li>
+<li><a href="http://digital-rag.com/index.php?topic=compquestions">Computers in Use</a></li>
+<li><a href="http://digital-rag.com/index.php?topic=drm">Digital Rights</a></li>
+<li><a href="http://digital-rag.com/index.php?topic=medialevy">Copyright</a></li>
+<li><a href="http://digital-rag.com/index.php?topic=government1">Our Masters (government)</a></li>
+</ul>
+</li>
+<li><a class="parent1" href="#">Extras</a>
+<ul>
+<li><a href="http://digital-rag.com/staticpages/index.php/DigitalRagMasthead">Masthead</a></li>
+<li><a href="http://digital-rag.com/links/index.php">Links</a></li>
+<li><a href="http://digital-rag.com/forum/index.php">Forum</a></li>
+<li><a href="http://digital-rag.com/sitemap/index.php">Sitemap</a></li>
+<li><a href="http://digital-rag.com/tag/index.php">Tag</a></li>
+<li><a href="http://digital-rag.com/facebook/index.php">Facebook</a></li>
+<li><a href="http://digital-rag.com/evlist/index.php">Events</a></li>
+<li><a href="http://digital-rag.com/filemgmt/index.php">My Downloads</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+		        <div id="gl_wrapper">
+            <div id="gl_content">
+                <div class="welcomeanddate-text">
+                    <span class="gl_user-menu-right">
+    <a href="http://digital-rag.com/users.php?mode=new">Sign Up!</a><br />
+    <a href="http://digital-rag.com/users.php?mode=login">Login</a>
+
+                    </span>
+                    <span class="gl_user-menu-left">
+                        <a href="http://digital-rag.com">Welcome to  The Digital Rag</a><br />
+                        Friday, March 28 2014 @ 04:54 PM PDT                    </span>
+                </div>
+<center></center>
+                <a name="content-start" id="content-start"></a>                         <!-- begin cached as story_WatchOCR_Linux_OCR_n_article_6a30a3d91ef8cbf60d09ec025f9f70a0_nouveau -->
+<HR>
+<div class="story">
+    <span class="story-icons">
+				<span style="padding-right:3px;">
+<script type="text/javascript">
+digg_url = 'http://digital-rag.com/article.php/WatchOCR-Linux-OCR'; digg_skin = 'icon'; digg_window = 'new'; </script>
+<script src="http://digg.com/tools/diggthis.js" type="text/javascript"></script>
+		</span>
+		                                    </span>
+    <h1>WatchOCR - A Linux Bootable OCR System</h1>
+    <div class="story-information">
+        <p>Sunday, July 25 2010 @ 10:37 AM PDT</p>
+        <p>Contributed by: <a href="http://digital-rag.com/users.php?mode=profile&amp;uid=4" class="storybyline">Richard Pitt</a></p>
+        <p> </p>
+    </div>
+    <div class="story-body">
+        <a href="http://digital-rag.com/index.php?topic=sysadmin-pub" rel="category tag"><img src="http://digital-rag.com/images/icons/sysadmin.gif" class="floatright" alt="System Administration Tidbits" title="System Administration Tidbits" /></a><p>Sometimes serendipity steps in just as you think you're going to have to re-invent the wheel or (shudder) pay for some proprietary software and run it on Windoze.</p><p>This happened late last week as I looked around for ways of converting the publishing PDF of a huge reference book (made using Quark) into something I could put up online as a reference work with good search engine coverage and potential for crowd-sourced editing and extension.</p><p>The project is about to be announced as an adjunct to the work being done by Hancock Wildlife Foundation, an organization I've been part of in both technical and managerial roles since its founding in 2006.</p><p>The book <a href="http://www.hancockhouse.com/cgi-bin/products/search_prod_web.pl"><strong>Raptor Research and Management Techniques</strong></a>&nbsp;is a compendium of papers that deal with all manner of the life management of <a href="http://simple.wikipedia.org/wiki/Bird_of_prey">raptors</a>; eagles, hawks, falcons, ospreys, owls, vultures, etc. - birds of prey.</p><p>The problem I ran into is that once the manuscript was in Quark (where all the final editing had been done), the only way to get it out in any &quot;portable&quot; fashion is via conversion to PDF - just one of those things you find when you deal with proprietary software it seems; nothing reads Quark files because they are not documented and the format is protected jealously by the company.</p><p>OK - so I have a PDF. I also have tools that can take one apart and do other &quot;interesting things&quot; like convert to Postscript (pdf2ps) which can then be converted to ASCII (ps2ascii) and all the stuff in the PDF Toolkit (<a href="http://www.accesspdf.com/pdftk/">pdftk</a>)&nbsp;but... none of them work properly with the format of this book with its two columns and lots of diagrams, etc.</p><p>What I needed was some method of running OCR on the file and getting things out that way. I've seen some impressive facilities that accompany scanners and such - and of course only run on their output it seems.&nbsp;</p><p>I and many others have been looking for some open source facility that would do the trick. One that appeared to be &quot;interesting&quot; was <em><strong>Cuneiform</strong></em>, but the information on this Russian software is sparse in English. I had downloaded the source and had a short session trying to get it to run on my Fedora Core 11 box but was missing some libraries, and the docs are for Debian systems with &quot;apt get&quot; instead of &quot;yum&quot; and obviously different package names so I had put it aside for the time being.</p><p>The alternative was a Windows binary already configured - low on my list for now but a fall-back.</p><p>And lo and behold, along comes a note about a bootable Linux disk with all the things necessary:</p><p><a href="http://www.watchocr.com/">WatchOCR</a>.</p><p>It's web page contains a link to <a href="http://www.cuneiform.ru/eng/index.html">Cuneiform</a> so maybe the problem is resolved.</p><p>Read on to find out how the system performed but the docs differ from reality - and how to make the system at least a bit better and do some other interesting things such as create HTML output from your PDFs.</p><br /><p>This bootable disk image is based on Knoppix, a distro I've played with in the past but that is not one I use, I'm a Red Hat/Fedora user. That being said, the actual interface is not that much to worry about since the disk is single-function oriented. Only when I had to get &quot;under the hood&quot; to fix some things did it become obvious that things were in different places - but I muddled on.</p><p>I downloaded and burned the CD image onto a DVD (no CDs in this house it seems - everything was packed to move) and tried to boot it on a PC sitting on my floor here. I have a 4-way KVM switch hooked to my system here because I have 2 main systems and sometimes have other machines in place as I configure them for custom uses and customers. I've had a Compaq Presario sitting on my floor and hooked in for a couple of months now, since it was proposed as a machine for an application and then the application was dropped.</p><p>This model SR1734x has an AMD Athalon 3200+ processor and a couple of Gigs of RAM so should have done the trick - but no GUI came up after a reasonable time. These things happen. This system uses an ATI video chip.</p><p>I tried on another machine, this time a HP Pavillion A1430n - with Athalon 3800+ processor and again a couple of Gigs of RAM. Booted and ran fine. This machine uses an Nvidia chipset for video - maybe this is the difference that helped.</p><p>The SETUP section of the minimal documentation on the web site says the next thing to do is to open up the web browser on the screen and put in &quot;localhost&quot; in the address bar. The &quot;Web Browser&quot; icon on the bottom bar lead me to bring up &quot;Iceweasel&quot; which is a <a href="http://en.wikipedia.org/wiki/Mozilla_Corporation_software_rebranded_by_the_Debian_project">re-branded Mozilla browser with modifications by the Debian Project.</a></p><p>With the browser up I looked for Google.com and&nbsp;discovered I'd forgotten to plug in the network. Plugged it in and the network icon in the lower right of the screen told me it had configured and connected fine.</p><p><img width="300" vspace="10" hspace="10" align="right" alt="" src="http://digital-rag.com/images/library/Image/WatchOCR.jpg" />Putting &quot;localhost&quot; into the address bar brought up a minimal screen pre-filled with the defaults for the &quot;scanin&quot; and &quot;scanout&quot; directories and buttons to start/stop the program.</p><p>At this point the web site says you can install the software to the computer's hard disk but for now I'll skip that step so the next step was getting it talking to my network.</p><p>This involves the Linux command line. The &quot;terminal emulator&quot; icon is to the left of the browser icon and brings up a command line prompt as the &quot;knoppix&quot; user. It turns out that this user can't mount the file share, so you have to issue &quot;<code>su -</code>&quot; to get root status.</p><p>The &quot;recommended&quot; (only documented) way to connect your system to this one is via a SMB share. You set up a share on your network and then mount it using the command:</p><p style="margin-left: 40px; "><code>mount -t smbfs -o ip=XXX.XXX.XXX.XXX, workgroup=MSHOME, username=user, password=pass, uid=www-data, gid=www-data, dir_mode=0775, file_mode=0775, rw //ServerName/ShareName /home/knoppix/watchocr/</code></p><p>As it turned out, this didn't work for me for a couple of reasons, the first of which is that I had a Windows 7 Professional box on my network to run some video real-time mixing software I was testing, and it had decided that it was the master of the SMB network and was being anal about talking to or admitting that anything else on the network was allowed, including the several shares on my main Linux box that I connect to with my (admitedly Windoze) laptop sometimes.</p><p>A quick trip downstairs to where the Windows 7 box was - and telling it to shut down (&quot;don't turn off the power until I've finished installing these 14 updates&quot;) and patiently waiting for it to get off the network; time for a coffee.</p><p>Once the nasty master was off, it was time to try the above incantation again - nope, got a dump of the syntax of the &quot;mount&quot; command and nothing much that told me why it didn't work. I know the IP, the username and password are correct so something else is screwy.</p><p>Tried the bare mount &quot;mount -t smbfs sharename /home/knoppix/watchocr&quot; and got a different message so something in the options was not working out.&nbsp;</p><p>The &quot;xsmbrowser&quot; program offered as a means to discover the share names didn't seem to want to find mine from my Linux box (didn't even find the Windows 7 box either but I don't think that machine has any). Maybe it works fine with a &quot;real&quot; Windows share.</p><p>The final outcome was that the system wanted a &quot;-o&quot; for each option and no commas between them so ended up:</p><p style="margin-left: 40px; "><code>mount -t smbfs -o  username=xxx -o password=yyy -o workgroup=WORKGROUP -o uid=www-data -o gid=www-data -o dir_mode=0775  //192.168.100.1/scan /home/knoppix/watchocr/</code></p><p>&nbsp;</p><p>There is another way to mount a file system - nfs (the &quot;right&quot; way IMHO)</p><p><meta http-equiv="content-type" content="text/html; charset=utf-8">          </meta></p><p style="margin-top: 5px; margin-bottom: 0px; margin-left: 40px; "><code>mount -f nfs -o nolock 192.168.100.1:mountpoint /home/knoppix/watchocr</code></p><p style="margin-top: 5px; margin-bottom: 0px; ">This will work &quot;out of the box&quot; if you have a file system exported already on your machine. If you want to use the nfslockd then you'll have to start the &quot;statd&quot; program locally before the mount - and then remove the &quot;-o nolock&quot;</p><p style="margin-top: 5px; margin-bottom: 0px; "><span class="note" style="background-image: url(http://digital-rag.com/layout/nouveau/images/note.png); background-attachment: scroll; background-origin: initial; background-clip: initial; background-color: rgb(254, 246, 216); border-top-width: 3px; border-right-width: 3px; border-bottom-width: 3px; border-left-width: 3px; border-top-style: solid; border-right-style: solid; border-bottom-style: solid; border-left-style: solid; border-top-color: rgb(253, 225, 121); border-right-color: rgb(253, 225, 121); border-bottom-color: rgb(253, 225, 121); border-left-color: rgb(253, 225, 121); color: rgb(183, 144, 0); display: block; margin-top: 15px; margin-right: 0px; margin-bottom: 15px; margin-left: 0px; padding-top: 10px; padding-right: 10px; padding-bottom: 10px; padding-left: 45px; background-position: 5px 50%; background-repeat: no-repeat no-repeat; ">By the way - I'm using the IP addresses in all these commands but in fact on my system I could use the names since when the <em>watchocr</em> system picked up a DHCP address it also configured the DNS correctly and my local names resolve correctly.</span></p><p>I used the web interface to start the server's processing.</p><p>This got me to the point where I could try out the actual conversion.</p><p>The first thing that happened when I copied (I already have the pdfs, so in this case I'm not scanning to the source directory, just copying) was that the files simply disappeared and nothing else seemed to happen. Since there is really no documentation on what is supposed to happen, this was a bit mystifying.</p><p>It turned out that I had restarted my SMB share on the Linux box after I'd mounted it on the <em>watchocr</em> system and that had caused problems. This in turn showed up a major (IMHO) inadequacy of the system in that at start up (and every cycle) it removes all the files in the TMP directory, including any that had not yet been processed. I commented out the &quot;<code>rm -rf $PREFIX</code>&quot; line near the bottom of the file, just about the <code>sleep 5</code>. The correct running of the script should cycle through all the files in this TMP directory and move the results to the scanout directory with no problems, regardless of whether it has been stopped and restarted in the middle of a run as I had to do. I admit that the intended purpose of just doing scans as they show up should not suffer from this problem normally, but &quot;fail safe&quot; is the way to do things and this would have lost data if the machine had restarted in the middle of a job.</p><p>After digging through the system I found the actual program that sits and loops, watching for the incoming files (5 second loop): /usr/bin/watchocr - started/stopped fairly brutally by programs in /var/www</p><p>The first thing the program does in each loop is make a &quot;tmp&quot; directory on the share and move any PDFs to this directory. It then cycles through each of them in turn, running pdfinfo to get the page count, then for each page, splitting out the individual page (using gs) as a TIFF with <a href="http://www.ghostscript.com/">ghostscript</a> (<code>gs -dNOPAUSE -r300 -dBATCH -dFirstPage=$page -dLastPage=$page -sDEVICE=tiff24nc -sOutputFile=$letter.$page $letter</code>)&nbsp;and rewriting it as a pdf with <a href="http://freshmeat.net/projects/img2pdf/">img2pdf</a>. Finally it again uses ghostscript to package up the &quot;searchable&quot; PDF.</p><p>It then checks to ensure it won't clobber an existing file in the scanout directory and moves the resulting file there, either with its original name or with a timestamp prepended.</p><h2>OK - but...</h2><p>All in all this work seems to be kind of useful if you only have need of a searchable PDF - but the real reason I got this disk was that it purports to have the Cuneiform OCR software on it too, and what I need for this project is something I can put into a HTML file.</p><p>It turns out that Cuneiform is on the system in /usr/local/bin. The script above does not appear to use it, but with a bit of modification I think we can do something even more useful - real OCR output, maybe in a number of formats too.</p><p>The biggest problem with Cuneiform is that it is written and supported in Russia and I have yet to find any definitive documents on how to make it work. Ah well, &quot;strings&quot; to the rescue.</p><p style="margin-left: 40px; ">While I was at it, I finally decided that switching to the console with the KVM switch was just plain time-consuming, so I went looking for either telnet or ssh to let me bring up remote terminal sessions on my normal desktop. Long-time readers will know that I have 4 monitors on my system so lots of screen real estate, but the KVM only switches the left-most monitor to the other systems.</p><p style="margin-left: 40px; ">Starting sshd involved creating server key-pairs in /etc/sshd:</p><p style="margin-left: 80px; "><code>ssh-keygen -q -t dsa -f /etc/sshd/ssh_host_dsa_key -C '' -N ''<br /></code><code>ssh-keygen -q -t rsa -f /etc/sshd/ssh_host_rsa_key -C '' -N ''</code></p><p style="margin-left: 40px; ">then, by copying it to the share, transferring my public key to /root/.ssh/authorized_keys2</p><p style="margin-left: 40px; ">and then simply running &quot;<code>/usr/sbin/sshd &amp;</code>&quot; - now I can log on via ssh and open a terminal session to the command line. IMHO this is something that should be done by default these days on such bootable systems - set up the server keys and run a sshd daemon - especially if there is little or now real security anyway as with this &quot;single-function server&quot; image. Yes, this can be done after the image has been pushed to a real hard drive, but it can be done by default too.</p><p>Back to the show... so running &quot;strings&quot; on the cuneiform binary reveals:</p><p style="margin-left: 40px; "><code><span style="color: rgb(128, 0, 0); ">Supported languages:</span></code></p><p style="margin-left: 40px; "><code><span style="color: rgb(128, 0, 0); ">Supported formats:</span></code><code><span style="color: rgb(128, 0, 0); ">&nbsp;&nbsp; &nbsp;</span></code></p><p style="margin-left: 40px; "><code><span style="color: rgb(128, 0, 0); ">Could not open file&nbsp;</span></code></p><p style="margin-left: 40px; "><code><span style="color: rgb(128, 0, 0); ">&nbsp;is not a BMP file.</span></code></p><p style="margin-left: 40px; "><code><span style="color: rgb(128, 0, 0); ">BMP is not of type &quot;Windows V3&quot;, which is the only supported format.</span></code></p><p style="margin-left: 40px; "><code><span style="color: rgb(128, 0, 0); ">Please convert your BMP to uncompressed V3 format and try again.</span></code></p><p style="margin-left: 40px; "><code><span style="color: rgb(128, 0, 0); ">is a compressed BMP. Only uncompressed BMP files are supported.</span></code></p><p style="margin-left: 40px; "><code><span style="color: rgb(128, 0, 0); ">Please convert your BMP to uncompressed V3 format and try again.</span></code></p><p style="margin-left: 40px; "><code><span style="color: rgb(128, 0, 0); ">cuneiform-out.</span></code></p><p style="margin-left: 40px; "><code><span style="color: rgb(128, 0, 0); ">Cuneiform for Linux&nbsp;</span></code></p><p style="margin-left: 40px; "><code><span style="color: rgb(128, 0, 0); ">0.8.0</span></code></p><p style="margin-left: 40px; "><code><span style="color: rgb(128, 0, 0); ">Unknown language&nbsp;</span></code></p><p style="margin-left: 40px; "><code><span style="color: rgb(128, 0, 0); ">Unknown format&nbsp;</span></code></p><p style="margin-left: 40px; "><code><span style="color: rgb(128, 0, 0); ">Missing output file name.</span></code></p><p style="margin-left: 40px; "><code><span style="color: rgb(128, 0, 0); ">--dotmatrix</span></code></p><p style="margin-left: 40px; "><code><span style="color: rgb(128, 0, 0); ">--fax</span></code></p><p style="margin-left: 40px; "><code><span style="color: rgb(128, 0, 0); ">--singlecolumn</span></code></p><p style="margin-left: 40px; "><code><span style="color: rgb(128, 0, 0); ">html</span></code></p><p style="margin-left: 40px; "><code><span style="color: rgb(128, 0, 0); ">buginprogram</span></code></p><p style="margin-left: 40px; "><code><span style="color: rgb(128, 0, 0); ">Usage:&nbsp;</span></code></p><p style="margin-left: 40px; "><code><span style="color: rgb(128, 0, 0); ">[-l languagename -f format --dotmatrix --fax -o result_file] imagefile</span></code></p><p style="margin-left: 40px; "><code><span style="color: rgb(128, 0, 0); ">PUMA_Init failed.</span></code></p><p style="margin-left: 40px; "><code><span style="color: rgb(128, 0, 0); ">none.txt</span></code></p><p style="margin-left: 40px; "><code><span style="color: rgb(128, 0, 0); ">PUMA_Xopen failed.</span></code></p><p style="margin-left: 40px; "><code><span style="color: rgb(128, 0, 0); ">PUMA_XFinalrecognition failed.</span></code></p><p style="margin-left: 40px; "><code><span style="color: rgb(128, 0, 0); ">PUMA_XSave failed.</span></code></p><p style="margin-left: 40px; "><code><span style="color: rgb(128, 0, 0); ">PUMA_XClose failed.</span></code></p><p style="margin-left: 40px; "><code><span style="color: rgb(128, 0, 0); ">PUMA_Done failed.</span></code></p><p style="margin-left: 40px; "><code><span style="color: rgb(128, 0, 0); ">ruseng</span></code></p><p style="margin-left: 40px; "><code><span style="color: rgb(128, 0, 0); ">HTML format</span></code></p><p style="margin-left: 40px; "><code><span style="color: rgb(128, 0, 0); ">hocr</span></code></p><p style="margin-left: 40px; "><code><span style="color: rgb(128, 0, 0); ">hOCR HTML format</span></code></p><p style="margin-left: 40px; "><code><span style="color: rgb(128, 0, 0); ">native</span></code></p><p style="margin-left: 40px; "><code><span style="color: rgb(128, 0, 0); ">Cuneiform 2000 format</span></code></p><p style="margin-left: 40px; "><code><span style="color: rgb(128, 0, 0); ">RTF format</span></code></p><p style="margin-left: 40px; "><code><span style="color: rgb(128, 0, 0); ">smarttext</span></code></p><p style="margin-left: 40px; "><code><span style="color: rgb(128, 0, 0); ">plain text with TeX paragraphs</span></code></p><p style="margin-left: 40px; "><code><span style="color: rgb(128, 0, 0); ">text</span></code></p><p style="margin-left: 40px; "><code><span style="color: rgb(128, 0, 0); ">plain text</span></code></p><p>A little bit of thought says that most of the last few lines describe the &quot;format&quot; and result something like:</p><p>-f hocr (or maybe <em>html</em>) -&gt; hOCR HTML format</p><p>-f native -&gt; Cuneiform 2000 format</p><p>-f smartext -&gt; plain text with TeX paragraphs</p><p>-f ??? (rtf???) -&gt; RTF (rich text) format</p><p>-f text -&gt; plain text</p><p>It also appears that the program only works on bitmap files (.bmp)</p><p>OK - so let's try just a basic format. The first thing is to modify the <em>watchocr</em> script to both preserve the TIFF file and to convert it to bitmap. So right after the first &quot;gs -dNOPAUSE...&quot; command we'll insert the following:</p><p style="margin-left: 40px; "><code># now we have a TIFF with the PDF in it&nbsp;<br /></code><code># let's now create a BMP file for cuneiform to work on<br /></code><code><span class="Apple-tab-span" style="white-space:pre">				</span>mogrify -format bmp $letter.$page<br type="_moz" /></code><code><span class="Apple-tab-span" style="white-space:pre">				</span>mv $letter.bmp $letter.$page.bmp</code></p><p>This takes advantage of the fact that this bootable disk has ImageMagick on it - mogrify is one of the commands it provides.</p><p>Now we have the bitmap, let's run cuneiform on it with no format flag and see what we get:</p><p style="margin-left: 40px; "><code>cuneiform $letter.$page.bmp -o $letter.$page.txt</code></p><p>The script doesn't know what to do with the bitmap and text files, so we have to add a line to put these into the scanout directory (I put it after the img2pdf... command so we get all the temporary files):</p><p style="margin-left: 40px; "><code>cp $letter.* $2/</code></p><p>The rest of the script can run happily on its way as far as I'm concerned - at least for now. There is one other mod that I favor, that of capturing the original scan file instead of just overwriting it with the newly created PDF - with today's disk sizes there is no excuse to throw away good (and potentially better) data, just in case you find something wrong with your new PDF processor.</p><h2>Now comes the test</h2><p>OK - so I've got the script creating not only the &quot;searchable&quot; PDF but also both a TIFF and BMP version of the image of it. I've dumped 464 pages into the <em>scanin</em> directory and the system is munching happily on them. Took about 4.5 hours to do them all.</p><p>At the end, I created a copy of the BMP files in a separate directory and a HTML directory under it - and proceeded to craft a script that would hopefully &nbsp;turn these into HTML pages using cuneiform:</p><p style="margin-left: 40px; "><code>#!/bin/sh</code></p><p style="margin-left: 40px; "><code>mkdir -p HTML</code></p><p style="margin-left: 40px; "><code>for file in *bmp</code></p><p style="margin-left: 40px; "><code>do</code></p><p style="margin-left: 40px; "><code>echo $file</code></p><p style="margin-left: 40px; "><code>if [ ! -e HTML/$file.html ]</code></p><p style="margin-left: 40px; "><code>then</code></p><p style="margin-left: 40px; "><code><span class="Apple-tab-span" style="white-space:pre">	</span>cuneiform -f html -o HTML/$file.html $file&nbsp;</code></p><p style="margin-left: 40px; "><code>fi</code></p><p>Straight forward, simple and must be run from the directory containing the BMP files - but that's ok, it illustrates the use of cuneiform to get HTML files out. It runs about 7-8 pages/minute on this system which is not too bad. Graphics are dumped into a subdirectory with the base document's name, and linked into the HTML file to show at the top. If I decide this system is worth having around I'll probably add this (and maybe the RTF) line to the main process and get all manner of outputs out at the same time the system is processing the original scans.</p><p>It also appears that the format (-f) flags &quot;html&quot; and &quot;hocr&quot; are equivalent. The output from using either is identical.</p><p>There are definitely some OCR misbehaviors in the files - but for this particular purpose the output is more than good enough, and over time these output files may be edited by website members to include fixes, extensions and formatting changes. Many hands make light work so to speak.</p><p>Next, I have to take all these files and stuff them down the throat of our content management system (CMS) - GLfusion. At this point I'm not sure where in the system I'll put the files, maybe even a couple of places (static pages and wiki maybe) but that's for another article.</p><p>&nbsp;</p><p>Added: You can see the results at <a href="http://Raptors.HancockWildlife.org">Raptors.HancockWildlife.org</a></p><p>richard</p><p>Tag: <a class="tag_link" href="http://digital-rag.com/tag/index.php/"></a> <a class="tag_link" href="http://digital-rag.com/tag/index.php/ocr">ocr</a> <a class="tag_link" href="http://digital-rag.com/tag/index.php/html">html</a> <a class="tag_link" href="http://digital-rag.com/tag/index.php/cuneiform">cuneiform</a> <a class="tag_link" href="http://digital-rag.com/tag/index.php/watchocr">watchocr</a> <a class="tag_link" href="http://digital-rag.com/tag/index.php/pdf">pdf</a> <a class="tag_link" href="http://digital-rag.com/tag/index.php/tiff">tiff</a> <a class="tag_link" href="http://digital-rag.com/tag/index.php/bmp">bmp</a></p><p></p><p></p><center><iframe src="http://www.facebook.com/widgets/like.php?href=http://digital-rag.com/article.php/WatchOCR-Linux-OCR"
+        scrolling="no" frameborder="0"
+        style="border:none; width:450px; height:80px"></iframe></center>
+    </div>
+    <div class="story-footer">
+        <p></p>
+        <p> </p>
+        <p>         
+                </p>
+    </div>
+</div>
+<div class="block-divider"> </div>
+<!-- end cached as story_WatchOCR_Linux_OCR_n_article_6a30a3d91ef8cbf60d09ec025f9f70a0_nouveau -->
+        <div class="floatleft" style="width:48%;"><div id="whats-related" class="block-box-comment">
+    <span class="block-helpicon">
+            </span>
+    <h2>What's Related</h2>
+<ul class="list-whats-related">
+  <li><a href="http://www.hancockhouse.com/cgi-bin/products/search_prod_web.pl">Raptor Research and Man...</a></li>
+  <li><a href="http://simple.wikipedia.org/wiki/Bird_of_prey">raptors</a></li>
+  <li><a href="http://www.accesspdf.com/pdftk/">pdftk</a></li>
+  <li><a href="http://www.watchocr.com/">WatchOCR</a></li>
+  <li><a href="http://www.cuneiform.ru/eng/index.html">Cuneiform</a></li>
+  <li><a href="http://en.wikipedia.org/wiki/Mozilla_Corporation_software_rebranded_by_the_Debian_project">re-branded Mozilla brow...</a></li>
+  <li><a href="http://www.ghostscript.com/">ghostscript</a></li>
+  <li><a href="http://freshmeat.net/projects/img2pdf/">img2pdf</a></li>
+  <li><a href="http://Raptors.HancockWildlife.org">Raptors.HancockWildlife...</a></li>
+  <li><a href="http://digital-rag.com/search.php?mode=search&amp;type=stories&amp;author=4">More by Richard Pitt</a></li>
+  <li><a href="http://digital-rag.com/search.php?mode=search&amp;type=stories&amp;topic=sysadmin-pub">More from System Administration Tidbits</a></li>
+</ul>
+</div>
+</div>
+        <div class="floatleft" style="width:48%;"><div id="story-options" class="block-box-comment">
+    <span class="block-helpicon">
+            </span>
+    <h2>Story Options</h2>
+<ul class="list-story-options">
+  <li><a href="http://digital-rag.com/profiles.php?sid=WatchOCR-Linux-OCR&amp;what=emailstory" rel="nofollow">Mail Story to a Friend</a></li>
+  <li><a href="http://digital-rag.com/article.php/WatchOCR-Linux-OCR/print" rel="nofollow">Printable Story Format</a></li>
+</ul>
+</div>
+</div>
+        <div class="clearboth"><h2><a name="trackback">Trackback</a></h2>
+<p>Trackback URL for this entry: http://digital-rag.com/trackback.php/WatchOCR-Linux-OCR</p>
+No trackback comments for this entry.</div>
+        <div id="commentarea">
+<div class="block-divider"> </div>
+<a id="comments" name="comments"></a>
+<div class="commentbar-line1">
+
+</div>
+<div class="commentbar-line2">
+	<form style="float:right; margin-top:2px; margin-bottom:3px; margin-right:10px;" action="http://digital-rag.com/comment.php" method="post">
+        <div>
+            <input type="hidden" name="sid" value="WatchOCR-Linux-OCR" />
+            <input type="hidden" name="pid" value="0" />
+            <input type="hidden" name="type" value="article" />
+            <input type="hidden" name="title" value="WatchOCR - A Linux Bootable OCR System" />
+            <input type="submit" name="reply" value="Post a comment" />
+        </div>
+    </form>
+    <form style="float:right; margin-top:2px; margin-bottom:3px;" action="http://digital-rag.com/article.php#comments" method="post">
+        <div>
+            <input type="hidden" name="story" value="WatchOCR-Linux-OCR" />            <select name="order">
+<option value="DESC">Newest First</option>
+<option value="ASC" selected="selected">Oldest First</option>
+
+</select>            <select name="mode">
+<option value="flat">Flat</option>
+<option value="nested">Nested</option>
+<option value="nocomment">No Comments</option>
+<option value="threaded" selected="selected">Threaded</option>
+
+</select>            <input type="submit" value="Refresh" />
+            <input type="hidden" name="type" value="article" />
+        </div>
+    </form>
+
+	<h2 style="padding:0px 10px; margin:5px;">0 comments</h2>
+</div>
+<div class="commentbar-line3" style="clear:both; text-align:center; margin-bottom:10px;">
+    </div>
+<div class="aligncenter"></div>
+</div>
+            </div>         </div>     <div id="gl_navigation" class="gl_blockstyle1">         <div class="block-columnpad"><div id="blockmenu" class="block-box-left">
+    <span class="block-helpicon">
+            </span>
+    <h2 class="block-title-left">Navigation</h2>
+<div id="gl_moomenu-vert-l3"><div class="gl_moomenu-vert-l3">
+<ul>
+<li><a href="http://digital-rag.com/">Home</a></li>
+<li><a href="http://digital-rag.com/filemgmt/index.php">Downloads</a></li>
+<li><a href="http://digital-rag.com/forum/index.php">Forums</a></li>
+<li><a class="parent-l3" name="parent-l3" href="#">Topic Menu</a>
+<ul>
+<li><a href="http://digital-rag.com/index.php?topic=Cancer">Cancer</a></li>
+<li><a href="http://digital-rag.com/index.php?topic=Environment">The Environment</a></li>
+<li><a href="http://digital-rag.com/index.php?topic=DrivingGame">The Driving Game</a></li>
+<li><a href="http://digital-rag.com/index.php?topic=Musings">Musings on life</a></li>
+<li><a href="http://digital-rag.com/index.php?topic=user-admin">Member Administration</a></li>
+<li><a href="http://digital-rag.com/index.php?topic=archive">Archive</a></li>
+<li><a href="http://digital-rag.com/index.php?topic=vidnet">Video On the Internet</a></li>
+<li><a href="http://digital-rag.com/index.php?topic=sysadmin-pub">System Administration Tidbits</a></li>
+<li><a href="http://digital-rag.com/index.php?topic=digitalcameras">Digital Cameras in Use</a></li>
+<li><a href="http://digital-rag.com/index.php?topic=pacdat-news">Newsletter Postings</a></li>
+<li><a href="http://digital-rag.com/index.php?topic=General">General News</a></li>
+<li><a href="http://digital-rag.com/index.php?topic=motorcycle">Motorcycling</a></li>
+<li><a href="http://digital-rag.com/index.php?topic=ContentManagement">Content Managed Systems</a></li>
+<li><a href="http://digital-rag.com/index.php?topic=compquestions">Computers in Use</a></li>
+<li><a href="http://digital-rag.com/index.php?topic=drm">Digital Rights</a></li>
+<li><a href="http://digital-rag.com/index.php?topic=medialevy">Copyright</a></li>
+<li><a href="http://digital-rag.com/index.php?topic=government1">Our Masters (government)</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div></div>
+<div class="aligncenter">
+    <div class="block-divider-left"></div>
+</div>
+<div id="search" class="block-box-left">
+    <span class="block-helpicon">
+        <a href="http://blog.pacdat.net/search.php" class="blocktitle"><img src="http://digital-rag.com/layout/nouveau/images/button_help.png" alt="?" /></a>    </span>
+    <h2 class="block-title-left">Search</h2>
+<div class="searchform-box">
+                        <form class="searchform-elements" action="/search.php" method="GET">
+                            <input type="text" name="query" size="17" maxlength="255"><br>
+                            <input type="hidden" name="type" value="all">
+                            <a href="/search.php" class="advancedsearch">Advanced Search</a>&nbsp;
+                            <input type="hidden" name="mode" value="search">
+                            <input type="submit" value="Search">
+                        </form>
+                    </div>
+</div>
+<div class="aligncenter">
+    <div class="block-divider-left"></div>
+</div>
+<div id="block_tag" class="block-box-left">
+    <span class="block-helpicon">
+            </span>
+    <h2 class="block-title-left">Popular tags at this site</h2>
+<div id="b_tag_cloud_container">
+	<a class="tag_lv4" href="http://digital-rag.com/tag/index.php/acta" rel="acta">acta</a>  <a class="tag_lv2" href="http://digital-rag.com/tag/index.php/canada" rel="canada">canada</a>  <a class="tag_lv6" href="http://digital-rag.com/tag/index.php/cancer" rel="cancer">cancer</a>  <a class="tag_lv2" href="http://digital-rag.com/tag/index.php/cms" rel="cms">cms</a>  <a class="tag_lv9" href="http://digital-rag.com/tag/index.php/copyright" rel="copyright">copyright</a>  <a class="tag_lv6" href="http://digital-rag.com/tag/index.php/diabetes" rel="diabetes">diabetes</a>  <a class="tag_lv3" href="http://digital-rag.com/tag/index.php/dmca" rel="dmca">dmca</a>  <a class="tag_lv8" href="http://digital-rag.com/tag/index.php/drm" rel="drm">drm</a>  <a class="tag_lv2" href="http://digital-rag.com/tag/index.php/facebook" rel="facebook">facebook</a>  <a class="tag_lv5" href="http://digital-rag.com/tag/index.php/glfusion" rel="glfusion">glfusion</a>  <a class="tag_lv3" href="http://digital-rag.com/tag/index.php/internet" rel="internet">internet</a>  <a class="tag_lv2" href="http://digital-rag.com/tag/index.php/law" rel="law">law</a>  <a class="tag_lv3" href="http://digital-rag.com/tag/index.php/linux" rel="linux">linux</a>  <a class="tag_lv2" href="http://digital-rag.com/tag/index.php/music" rel="music">music</a>  <a class="tag_lv2" href="http://digital-rag.com/tag/index.php/pain" rel="pain">pain</a>  <a class="tag_lv2" href="http://digital-rag.com/tag/index.php/politics" rel="politics">politics</a>  <a class="tag_lv3" href="http://digital-rag.com/tag/index.php/publishing" rel="publishing">publishing</a>  <a class="tag_lv3" href="http://digital-rag.com/tag/index.php/streaming" rel="streaming">streaming</a>  <a class="tag_lv3" href="http://digital-rag.com/tag/index.php/tpm" rel="tpm">tpm</a>  <a class="tag_lv5" href="http://digital-rag.com/tag/index.php/video" rel="video">video</a>  </div>
+</div>
+<div class="aligncenter">
+    <div class="block-divider-left"></div>
+</div>
+<div id="whats_new_block" class="block-box-left">
+    <span class="block-helpicon">
+            </span>
+    <h2 class="block-title-left">What's New</h2>
+<h3>Stories</h3>No new stories<br /><br /><h3>Comments <small>last 2 days</small></h3><ul class="list-new-comments">
+  <li><a href="http://digital-rag.com/article.php/MusingsOnLife#comments" title="Musings on Life and Living it to the Fullest">Musings on Life a... [+3]</a></li>
+  <li><a href="http://digital-rag.com/article.php/InterludeToLinuxcon-BufferbloatBetaTest#comments" title="Interlude to Linuxcon - Bufferbloat Fix Entering Beta Test Phase">Interlude to Linu...</a></li>
+  <li><a href="http://digital-rag.com/article.php/DontWantOurSteelNoCopyright#comments" title="Canada to US - Don't want our steel? Then Stop Pushing Your Copyright Agenda!">Canada to US - Do... [+3]</a></li>
+  <li><a href="http://digital-rag.com/article.php/TheDigitalHereafterMapleRidgeNews#comments" title="The Digital Hereafter">The Digital Herea...</a></li>
+  <li><a href="http://digital-rag.com/polls/index.php?pid=HowYouReadNews-1#comments" title="How Do You Like To Read News About Internet/Computers?">How Do You Like T...</a></li>
+  <li><a href="http://digital-rag.com/article.php/MovingAlongWhatToThrowOut#comments" title="Moving Along - What to Throw Out">Moving Along - Wh...</a></li>
+  <li><a href="http://digital-rag.com/article.php/RadicalThoughtsForA60YearOld#comments" title="Radical Thoughts for a 60 Year Old">Radical Thoughts ...</a></li>
+</ul>
+<br /><h3>Trackbacks <small>last 2 days</small></h3>No new trackbacks<br />
+</div>
+<div class="aligncenter">
+    <div class="block-divider-left"></div>
+</div>
+<div id="block_quicklinks" class="block-box-left">
+    <span class="block-helpicon">
+            </span>
+    <h2 class="block-title-left">QuickLinks</h2>
+<div>
+	<form style="display: inline" ACTION='http://digital-rag.com/quicklinks/ajax-rpc.php' METHOD="GET">
+		<select id="ql_category" onchange="javascript:updateLinks()"><option value="site">Root</option><option value="">&nbsp;&nbsp;</option><option value="Business">&nbsp;&nbsp;Business</option><option value="Computer Security">&nbsp;&nbsp;Computer Security</option><option value="Copyright">&nbsp;&nbsp;Copyright</option><option value="Digital Rights">&nbsp;&nbsp;Digital Rights</option><option value="E-mail">&nbsp;&nbsp;E-mail</option><option value="Geeklog Sites">&nbsp;&nbsp;Geeklog Sites</option><option value="General Interest">&nbsp;&nbsp;General Interest</option><option value="Linux">&nbsp;&nbsp;Linux</option><option value="Media Levy">&nbsp;&nbsp;Media Levy</option><option value="Other Blogs">&nbsp;&nbsp;Other Blogs</option><option value="Personal">&nbsp;&nbsp;Personal</option></select>		<div class="pluginTextSmall">
+			<input type="checkbox" name="ql_target" id="ql_target" / onchange="javascript:ql_checkboxStatus()"> Open in new window.		</div>
+	</form>
+</div>
+<span id="quicklinks_box"><a href="http://digital-rag.com/links/portal.php/link/20040331085010854" id="ql_link" title="Overbearing anti-piracy legislation introduced by Sens. Orrin Hatch (R-Utah) and Patrick Leahy (D-Vermont)  in the US Senate">Protecting Intellec...</a><br>
+<a href="http://digital-rag.com/links/portal.php/link/20050328103900905" id="ql_link" title="An article on how susceptible people are to giving away their personal information - enough to allow the recipient to gain access to their credit cards and bank accounts - for the chance of winning theatre tickets or even less.">How stupid are you?...</a><br>
+<a href="http://digital-rag.com/links/portal.php/link/20050419111716492" id="ql_link" title="Groklaw's new page on Patent law">Patent Information</a><br>
+<a href="http://digital-rag.com/links/portal.php/link/20060311111441271" id="ql_link" title="A 7 minute video of the assembly of an Airbus A380 Aircraft - awsome!">Making an Airbus A3...</a><br>
+<a href="http://digital-rag.com/links/portal.php/link/20051112121450950" id="ql_link" title="From a talk to Microsoft's DRM group, this gets into more detail than I do, and is worth reading if you have even the slightest interest in why you can't copy a DVD to VHS or why scientists and researchers are being thrown in jail for telling us why something is broken (and why some country's researchers are not going to the USA to give talks anymore.)">Excellent talk on w...</a><br>
+<a href="http://digital-rag.com/links/portal.php/link/20050313093802408" id="ql_link" title="A great article that mirrors many of my experiences in the various startups I've been involved in.">How to Start a Startup</a><br>
+<a href="http://digital-rag.com/links/portal.php/link/20050424222100782" id="ql_link" title="In two earlier columns on Europe’s database directive, and European public information, I pointed out that our policy-process is almost evidence-free. New rights are created on the basis of anecdote and scaremongering. There are other examples and they are not confined to Europe.">Deconstructing stup...</a><br>
+<a href="http://digital-rag.com/links/portal.php/link/20040413080613969" id="ql_link" title="The Web site is intended to be a focal point of information and resources on computer and network security for the higher education community.">Educause Security H...</a><br>
+<a href="http://digital-rag.com/links/portal.php/link/20040417095443586" id="ql_link" title="More information on spyware and privacy concerns">Earthlink Spy Audit</a><br>
+<a href="http://digital-rag.com/links/portal.php/link/20050424105833576" id="ql_link" title="Abstract: Growing conviction that scientific progress will significantly benefit if scholarly articles and research papers are made freely available on the Web has given rise to the Open Access (OA) movement. While there is some awareness that OA articles may require digital rights management (DRM), there is currently only low-level interest in the topic, with many OA advocates maintaining that it has no relevance to OA. The issue is complicated by the fact that there are currently two ways in which research papers are made OA, each of which has different implications from a rights point of view.">The role of digital...</a><br>
+
+Page: 1 <a href="javascript:updateLinks(1);">2</a> <a href="javascript:updateLinks(2);">3</a> 
+</span></div>
+<div class="aligncenter">
+    <div class="block-divider-left"></div>
+</div>
+<div id="older_stories" class="block-box-left">
+    <span class="block-helpicon">
+            </span>
+    <h2 class="block-title-left">Older Stories</h2>
+<h3>Monday <small>28-Nov</small></h3>
+<ul class="list-older-stories">  <li><a href="http://digital-rag.com/article.php/BlindidedByCancer" title="Blindsided, Kind Of">Blindsided, Kind Of</a> (84)</li></ul><br /><h3>Friday <small>07-Oct</small></h3>
+<ul class="list-older-stories">  <li><a href="http://digital-rag.com/article.php/OfMirrorsAndLuckDataRecoveryOnRAID1" title="Of Mirrors and Luck - a Tail of Losing The Coin Flip">Of Mirrors and Lu...</a> (39)</li></ul><br /><h3>Tuesday <small>04-Oct</small></h3>
+<ul class="list-older-stories">  <li><a href="http://digital-rag.com/article.php/OpenLetterReLawfulAccess" title="(Un)Lawful Access - An open letter to Prime Minister Stephen Harper and my MP, Randy Kamp">(Un)Lawful Access...</a> (47)</li></ul><br /><h3>Thursday <small>15-Sep</small></h3>
+<ul class="list-older-stories">  <li><a href="http://digital-rag.com/article.php/DontWantOurSteelNoCopyright" title="Canada to US - Don't want our steel? Then Stop Pushing Your Copyright Agenda!">Canada to US - Do...</a> (253)</li></ul><br /><h3>Saturday <small>10-Sep</small></h3>
+<ul class="list-older-stories">  <li><a href="http://digital-rag.com/article.php/RadicalThoughtsForA60YearOld" title="Radical Thoughts for a 60 Year Old">Radical Thoughts ...</a> (87)</li></ul><br /><h3>Tuesday <small>30-Aug</small></h3>
+<ul class="list-older-stories">  <li><a href="http://digital-rag.com/article.php/Fedora15AndLatestSeamonkey2.3.1" title="Fedora 15 and Latest Seamonkey Browser">Fedora 15 and Lat...</a> (68)</li></ul><br /><h3>Saturday <small>20-Aug</small></h3>
+<ul class="list-older-stories">  <li><a href="http://digital-rag.com/article.php/Linuxcon2011LinuxCertification" title="Linuxcon 2011 - Interlude 2 - Linux Certification">Linuxcon 2011 - I...</a> (65)</li>  <li><a href="http://digital-rag.com/article.php/1990sIT-test" title="I guess I'm from the 1990s - maybe even earlier...">I guess I'm from ...</a> (99)</li></ul><br /><h3>Thursday <small>18-Aug</small></h3>
+<ul class="list-older-stories">  <li><a href="http://digital-rag.com/article.php/InterludeToLinuxcon-BufferbloatBetaTest" title="Interlude to Linuxcon - Bufferbloat Fix Entering Beta Test Phase">Interlude to Linu...</a> (123)</li></ul><br /><h3>Sunday <small>14-Aug</small></h3>
+<ul class="list-older-stories">  <li><a href="http://digital-rag.com/article.php/DiabetesAndLife" title="Diabetes and Life">Diabetes and Life</a> (77)</li></ul>
+</div>
+<div class="aligncenter">
+    <div class="block-divider-left"></div>
+</div>
+</div>
+    </div>
+    <div id="gl_extra" class="gl_blockstyle1">         <div class="block-columnpad"><div id="ad-general" class="block-box-right">
+    <span class="block-helpicon">
+        <a href="http://www.clickochet.com" class="blocktitle"><img src="http://digital-rag.com/layout/nouveau/images/button_help.png" alt="?" /></a>    </span>
+    <h2>Ads by Clickochet</h2>
+<div align="center">
+<script type='text/javascript'>
+<!--
+clickochet_client = 'VC-9420392794279'
+clickochet_width = '160'
+clickochet_height = '600'
+clickochet_categories = '1'
+clickochet_bg_color = 'F2F2F2'
+clickochet_border_color = 'AAAAFF'
+//-->
+</script>
+<script type='text/javascript' src='http://ad1.clickochet.com/getad.js'>
+</script>
+</div>
+</div>
+<div class="aligncenter">
+    <div class="block-divider-right"></div>
+</div>
+<div id="GooglePublicPosts" class="block-box-right">
+    <span class="block-helpicon">
+            </span>
+    <h2>G+ Public Posts</h2>
+There was a problem reading this feed (see error.log for details).
+</div>
+<div class="aligncenter">
+    <div class="block-divider-right"></div>
+</div>
+<div id="GooglePlus" class="block-box-right">
+    <span class="block-helpicon">
+        <a href="https://plus.google.com/" class="blocktitle"><img src="http://digital-rag.com/layout/nouveau/images/button_help.png" alt="?" /></a>    </span>
+    <h2>G+</h2>
+<div class="socialstatistics-widget" data-id="117069066078632347040"></div><script>(function(d,t){var b=d.createElement(t),c=d.getElementsByTagName(t)[0];b.async=b.src="http://socialstatistics.com/widget/widget.min.js";c.parentNode.insertBefore(b,c);})(document,'script');</script>
+</div>
+<div class="aligncenter">
+    <div class="block-divider-right"></div>
+</div>
+<div id="FacebookPage" class="block-box-right">
+    <span class="block-helpicon">
+        <a href="http://www.facebook.com/pages/Pacific-Data-Capture/226128260733040" class="blocktitle"><img src="http://digital-rag.com/layout/nouveau/images/button_help.png" alt="?" /></a>    </span>
+    <h2>Facebook Page</h2>
+<div id="fb-root"></div><script src="http://connect.facebook.net/en_US/all.js#xfbml=1"></script><fb:like-box href="http://www.facebook.com/pages/Pacific-Data-Capture/226128260733040" width="180" show_faces="false" stream="true" header="false"></fb:like-box>
+</div>
+<div class="aligncenter">
+    <div class="block-divider-right"></div>
+</div>
+<div id="RSS-feed" class="block-box-right">
+    <span class="block-helpicon">
+            </span>
+    <h2>RSS Feed</h2>
+<a target="_blank" href="http://feeds.feedburner.com/~r/pacdat/digital-rag/~6/2"><img src="http://feeds.feedburner.com/pacdat/digital-rag.2.gif" alt="Richard&#039;s Digital Rag" style="border:0"></a>
+</div>
+<div class="aligncenter">
+    <div class="block-divider-right"></div>
+</div>
+<div id="sponsors" class="block-box-right">
+    <span class="block-helpicon">
+            </span>
+    <h2>Sponsors</h2>
+<B>Subscribe to: </b><A href="http://blog.pacdat.net/staticpages/index.php/20080801201450467">The Digital Rag Newsletters</a><BR>
+<B><A href="http://www.pacdat.net">Pacific Data Capture</A></center><P>
+<A href="http://richard.pacdat.net">Also, See Richard's Main Web Site</A></B><BR>
+<P>
+<li><A href="http://www.mapleart.ca">Hand Crafted Solid Maple Furniture</A>
+<li><A href="http://www.pharosvilla.com">Vacation Bliss - a Villa in Jamaica</a>
+<li><a href="http://www.david-ingram.com">The Taxman - Cross-border Guru</a>
+<li><a href="http://www.bannerline.net">Bannerline Communications</a>
+
+</div>
+<div class="aligncenter">
+    <div class="block-divider-right"></div>
+</div>
+<div id="poll_block" class="block-box-right">
+    <span class="block-helpicon">
+            </span>
+    <h2>Poll</h2>
+<span class="floatright"></span><div class="poll-topic"></div>
+<form action="http://digital-rag.com/polls/index.php" id="VoteHowYouReadNews-1" method="post">
+    <div>
+    <input type="hidden" name="pid" value="HowYouReadNews-1" />
+            
+<div class="poll-questions">
+    <p class="poll-question"> How do you like to find out news about the internet and computers?</p>
+    <ul>
+      <li><input type="radio" name="aid[0]" value="1" />&nbsp;Newspaper</li>
+  <li><input type="radio" name="aid[0]" value="2" />&nbsp;Radio</li>
+  <li><input type="radio" name="aid[0]" value="3" />&nbsp;TV</li>
+  <li><input type="radio" name="aid[0]" value="4" />&nbsp;Web Search</li>
+  <li><input type="radio" name="aid[0]" value="5" />&nbsp;Favourite Web Site(s)</li>
+  <li><input type="radio" name="aid[0]" value="6" />&nbsp;Pod Cast</li>
+  <li><input type="radio" name="aid[0]" value="7" />&nbsp;Video Online</li>
+  <li><input type="radio" name="aid[0]" value="8" />&nbsp;Email List(s)</li>
+  <li><input type="radio" name="aid[0]" value="9" />&nbsp;RSS - Syndication</li>
+  <li><input type="radio" name="aid[0]" value="10" />&nbsp;Word of mouth</li>
+    </ul>
+</div>
+
+        <span class="pluginTinyText">This poll has 0 more questions.</span><br />
+        <input type="submit" value="Vote" />
+        <a href="http://digital-rag.com/polls/index.php?pid=HowYouReadNews-1&amp;aid=-1">Results</a>    </div>
+</form>
+
+<span class="pluginTinyText">
+    <a href="http://digital-rag.com/polls/index.php">Other polls</a> | 84 votes  | <a href="http://digital-rag.com/polls/index.php?pid=HowYouReadNews-1#comments">2 comments</a>
+</span>
+
+</div>
+<div class="aligncenter">
+    <div class="block-divider-right"></div>
+</div>
+</div>
+    </div>
+<center></center>
+        <div id="gl_footer">
+            <div class="bottom-r-corner">
+                <div class="bottom-l-corner"></div>
+            </div>
+						<div class="st-fmenu2">
+<ul>
+<li><a href="http://digital-rag.com/">Home</a></li>
+<li><a href="http://digital-rag.com/search.php">Search</a></li>
+<li><a href="http://digital-rag.com/stats.php">Site Stats</a></li>
+<li><a href="http://digital-rag.com/profiles.php?uid=2">Contact Us</a></li>
+<li class="st-f-last2"><a href="#top">Top</a></li>
+</ul>
+</div>
+			            <div id="footer-copyright">
+                 &copy; 2014 The Digital Rag&nbsp;&nbsp;&bull;&nbsp;&nbsp;<a href="http://digital-rag.com/terms.php">Terms of Use</a>&nbsp;&nbsp;&bull;&nbsp;&nbsp;<a href="http://digital-rag.com/privpol.php">Privacy Policy</a>&nbsp;&nbsp;&bull;&nbsp;&nbsp;<a href="http://digital-rag.com/backend/geeklog.rss
+">RSS</a>&nbsp;&nbsp;&bull;&nbsp;&nbsp;Page created in 0.34 seconds&nbsp;by <a href="http://www.glfusion.org/">glFusion</a><br><center>
+<a rel="license" href="http://creativecommons.org/licenses/by-sa/2.5/ca/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-sa/2.5/ca/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/2.5/ca/">Creative Commons Attribution-Share Alike 2.5 Canada License</a>
+</center>
+            </div>
+        </div>
+    </div>     <script type="text/javascript">
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    </script>
+    <script type="text/javascript">
+    try {
+    var pageTracker = _gat._getTracker("UA-1475873-14");
+    pageTracker._trackPageview();
+    } catch(err) {}</script>
+</body>
+</html>

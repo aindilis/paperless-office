@@ -1,0 +1,3 @@
+cuneiform
+tesseract-ocr
+imagemagick

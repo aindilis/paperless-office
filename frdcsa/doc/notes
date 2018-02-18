@@ -1,0 +1,49 @@
+Here is how to configure the batch manager to save files.
+
+The important parts are to 
+    select the "Folder watching job"
+    browse to the folder to watch
+    watch folders without time limit
+    load files
+    Create new document -> For each image file
+    Recognize Images
+    select speed or accuracy depending on your needs
+    Save
+    File Type -> Maybe: Text -> PDF with image on text
+    select output folder (different one than input!!!)
+    Finish workflow
+
+Use maxview, ocropus and tesseract.
+
+to have a system which performs OCR on documents you have scanned,
+enabling you to search these more efficiently.
+
+Can perform text classification on new documents to determine where
+they belong.
+
+Have a module to interact with the inventory manager.
+
+Process physical mail.
+
+
+
+
+Don't forget to do the software for document indexing with barcodes...
+
+Barcode papers that are put into the system, for easy retrieval.  Or
+just type some of the contents of the document....
+
+
+
+
+http://djvu.sourceforge.net/
+
+Allow export to multiple formats such as djvu, pdf, tiff, jpg, etc.
+
+gscan2pdf
+strigi
+
+
+"The one feature I liked about paperport was the automatic profiles of
+scanner settings for different document types. This was very useful if
+you were archiving say receipts or business correspondence."
